@@ -249,7 +249,7 @@ export default function Page() {
             <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="flex flex-col gap-3 border-b border-slate-200 p-5 sm:flex-row sm:items-center sm:justify-between">
                 <div><h2 className="text-lg font-bold">Danh sách sinh viên</h2><p className="mt-1 text-sm text-slate-500">Tìm theo họ tên hoặc email.</p></div>
-                <form onSubmit={(e) => { e.preventDefault(); loadStudents().catch((err: Error) => setError(err.message)); }} className="flex gap-2">
+                <form onSubmit={(e) => { e.preventDefault(); loadStudents(keyword).catch((err: Error) => setError(err.message)); }} className="flex gap-2">
                   <input value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Nhập từ khóa..." className="min-w-0 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500" />
                   <button className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-100">Tìm</button>
                   <button type="button" onClick={() => { setKeyword(""); loadStudents("").catch((err: Error) => setError(err.message)); }} className="rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">Xóa lọc</button>
