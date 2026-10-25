@@ -64,11 +64,11 @@ export default function Page() {
     return response.json();
   }, [authHeader]);
 
-  const loadStudents = useCallback(async (search = keyword) => {
+  const loadStudents = useCallback(async (search = "") => {
     const query = search.trim() ? `?keyword=${encodeURIComponent(search.trim())}` : "";
     const data = await request(`/api/students${query}`);
     setStudents(data as Student[]);
-  }, [keyword, request]);
+  }, [request]);
 
   useEffect(() => {
     if (!authHeader) return;
