@@ -1,0 +1,11 @@
+
+# Maven build output
+BE/spring-backend/target/
+
+# Node.js
+FE/node_modules/
+FE/.next/
+
+# Environment files
+FE/.env
+FE/.env.local
